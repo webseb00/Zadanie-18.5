@@ -27,6 +27,7 @@ class App extends Component {
 	}
 
 	renderLayout() {
+		const { users, messages, name } = this.state;
 		return (
 			<div className={styles.App}>
 				<div className={styles.AppHeader}>
@@ -35,15 +36,15 @@ class App extends Component {
 				</div>
 				<div className={styles.AppBody}>
 					<UsersList
-						users={this.state.users}
+						users={users}
 					/>
 					<div className={styles.MessageWrapper}>
 						<MessageList
-							messages={this.state.messages}
+							messages={messages}
 						/>
 						<MessageForm
 							onMessageSubmit={message => this.handleMessageSubmit(message)}
-							name={this.state.name}
+							name={name}
 						/>
 					</div>
 				</div>
